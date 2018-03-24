@@ -1,0 +1,54 @@
+module idl {
+
+	struct Job{
+		string nameReference;
+		string interfaceName;
+		string methodeName;
+		any parametre;
+		
+		string nameReferenceClient;
+		string interfaceNameClient;
+		
+	};
+	
+	interface Client{
+		void returnOfJob( in any reponse );
+		void initOrdonnaceur();
+		void createAndExecuteJob(in string nameRef, in string interfaceName, in string methodeName, in any parametre);
+		void printReturn();
+	};
+
+	interface Ordonnanceur{
+		void execute( in Job j);
+		void createThreadExecutor();
+	};
+	
+	interface Serveur{
+		readonly attribute boolean isReady;
+		
+		void doTheJob( in Job j );
+		void returnOfJobToTheClient();
+	};
+	
+	interface Annuaire{
+		boolean findJob();
+	};
+	
+	interface A{
+		string testReturn( in any parametre);
+		void testNoReturn( in any parametre);
+		void testEasy();
+	};
+	
+	interface B{
+		string testReturn( in any parametre);
+		void testNoReturn( in any parametre);
+		void testEasy();
+	};
+	
+	interface C{
+		string testReturn( in any parametre);
+		void testNoReturn( in any parametre);
+		void testEasy();
+	};
+};
