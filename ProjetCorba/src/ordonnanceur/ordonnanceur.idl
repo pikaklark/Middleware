@@ -1,0 +1,26 @@
+struct TaskParam {
+    long id;
+    string objectName;
+    string interfaceName;
+    string methodName;
+    string clientRef;
+    any params;
+};
+
+interface Scheduler {
+    oneway void task(in TaskParam param);
+    oneway void callback(in string objectName);
+};
+
+interface ClientCallBack {
+    oneway void callback(in long id, in any res);
+};
+
+interface A {
+    oneway void a1(in any params, in string serverRef, in string objectName);
+    oneway void a2(in any params, in string serverRef, in string objectName);
+};
+
+interface B {
+    oneway void b1(in any params, in string serverRef, in string objectName);
+};
