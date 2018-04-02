@@ -1,0 +1,50 @@
+module idl {
+
+	struct Job{
+		long id;
+	
+		string nameReference;
+		string interfaceName;
+		string methodeName;
+		any parametre;
+		
+		string nameReferenceClient;
+		string interfaceNameClient;
+		
+	};
+	
+	interface Client{
+		oneway void callBack( in long idJob, in any retour);
+		string toString();
+		void findRetour(in long idJob);
+	};
+	
+	interface Ordonnanceur{
+		oneway void execute( in Job j);
+		void referenceServeur(in string nameReference);
+	};
+	
+	interface Serveur{
+		boolean isReady();
+		oneway void execute(in Job j);
+	};
+	
+	interface A{
+		string testReturn();
+		void testNoReturn( in any parametre);
+		void testEasy();
+	};
+	
+	interface B{
+		string testReturn( in any parametre);
+		void testNoReturn( in any parametre);
+		void testEasy();
+	};
+	
+	interface C{
+		string testReturn( in any parametre);
+		void testNoReturn( in any parametre);
+		void testEasy();
+	};
+};
+

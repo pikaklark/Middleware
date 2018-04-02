@@ -1,0 +1,3 @@
+Pour lancer le service de nommage utiliser la commande
+
+sudo orbd - ORBInitialPort 1234
